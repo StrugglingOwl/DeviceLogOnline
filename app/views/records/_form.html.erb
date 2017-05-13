@@ -1,5 +1,53 @@
 <%= form_for @record do |f| %>
 
+<div class="form-record">
+    <div class="form-record string optional">
+        <%= f.label "日期", :class => "string optional control-label" %>
+        <%= f.select :date, [Date.today], :class => "string optional form-control" %>
+    </div>
+
+    <div class="form-record string optional">
+        <%= f.label "房间号", :class => "string optional control-label" %>
+        <%= f.select :room_id, ['3-1','3-2','3-3','3-4','3-5','3-6','3-7','3-8','3-9','3-10','4-1','4-2','4-3','4-4','4-5','4-6','4-7','4-8','4-9','4-10','4-11','4-12','4-13','4-14','4-15','4-16','3F导播室','4F导播室'], :class => "string optional form-control" %>
+    </div>
+
+    <div class="form-record string optional">
+        <%= f.label "设备名称", :class => "string optional control-label" %>
+        <%= f.text_field :device_name, :class => "string optional form-control" %>
+    </div>
+
+    <div class="form-record string optional">
+        <%= f.label "型号", :class => "string optional control-label" %>
+        <%= f.text_field :device_model, :class => "string optional form-control" %>
+    </div>
+
+    <div class="form-record string optional">
+        <%= f.label "序列号", :class => "string optional control-label" %>
+        <%= f.text_field :serial_number, :class => "string optional form-control" %>
+    </div>
+
+    <div class="form-record string optional">
+        <%= f.label "故障简述", :class => "string optional control-label" %>
+        <%= f.text_area :summary, :class => "string optional form-control" %>
+    </div>
+
+    <div class="form-record string optional">
+        <%= f.label "解决过程", :class => "string optional control-label" %>
+        <%= f.text_area :resolution, :class => "string optional form-control" %>
+    </div>
+
+    <div class="form-record string optional">
+        <%= f.label "结果（ 0 代表待解决，1 代表已解决）", :class => "string optional control-label" %>
+        <%= f.select :result, ['0','1'], :class => "string optional form-control" %>
+    </div>
+
+    <div class="form-record string optional">
+        <%= f.label "备注", :class => "string optional control-label" %>
+        <%= f.text_area :remarks, :class => "string optional form-control" %>
+    </div>
+
+</div>
+
 <% if @record.errors.any? %>
 <ul>
   <% @record.errors.full_messages.each do |msg| %>
@@ -8,42 +56,5 @@
 </ul>
 <% end %>
 
-日期
-<%= f.select(:date, [Date.today] )  %>
-<br>
-房间号
-<br>
-<%= f.select(:room_id, ['3-1','3-2','3-3','3-4','3-5','3-6','3-7','3-8','3-9','3-10','4-1','4-2','4-3','4-4','4-5','4-6','4-7','4-8','4-9','4-10','4-11','4-12','4-13','4-14','4-15','4-16','3F导播室','4F导播室']) %>
-<br>
-设备名称
-<br>
-<%= f.text_field :device_name %>
-<br>
-型号
-<br>
-<%= f.text_field :device_model %>
-<br>
-序列号
-<br>
-<%= f.text_field :serial_number %>
-<br>
-故障简述
-<br>
-<%= f.text_area :summary %>
-<br>
-
-解决过程
-<br>
-<%= f.text_area :resolution %>
-<br>
-结果（ 0 代表待解决，1 代表已解决）
-<br>
-<%= f.select(:result, ['0','1']) %>
-<br>
-备注
-<br>
-<%= f.text_area :remarks %>
-<br>
-
-<%= f.submit "提交", :disable_with => 'Submiting...' %>
+<%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
 <% end %>
