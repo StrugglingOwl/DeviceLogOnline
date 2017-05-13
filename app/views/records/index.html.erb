@@ -30,7 +30,15 @@
           <td><%= record.summary %></td>
 
           <td><%= record.resolution %></td>
-          <td><%= record.result %></td>
+          <td>
+            <%= if record.result == true
+              "已";
+            else
+              "待";
+            end
+            %>
+            解决
+          </td>
           <td><%= record.remarks %></td>
 
           <td>
