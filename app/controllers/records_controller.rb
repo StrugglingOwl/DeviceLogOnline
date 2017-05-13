@@ -31,6 +31,14 @@ class RecordsController < ApplicationController
 
   end
 
+  def destroy
+    @record = Record.find(params[:id])
+    @record.destroy
+    flash[:alert] = "记录已删除！"
+    redirect_to records_path
+
+  end
+
   private
 
   def record_params
