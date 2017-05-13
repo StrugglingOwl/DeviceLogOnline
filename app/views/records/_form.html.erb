@@ -9,9 +9,9 @@
     <%= f.input :serial_number, input_html: { class: "form-control"} %>
     <%= f.input :summary, input_html: { class: "form-control"} %>
     <%= f.input :resolution, input_html: { class: "form-control"} %>
-    <div><b>Result ( 0 is Solved.)</b></div>
+    <div><b>Result ( 1 is Solved.)</b></div>
     <%= f.select :result, ['0','1'], input_html: { class: "form-control"} %>
     <%= f.input :remarks, input_html: { class: "form-control"} %>
 </div>
-<%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
+<%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
 <% end %>
