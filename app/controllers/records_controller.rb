@@ -3,6 +3,10 @@ class RecordsController < ApplicationController
     @records = Record.all
   end
 
+  def show
+    @records = Record.find(params[:id])
+  end
+
   def new
     @record = Record.new
   end
