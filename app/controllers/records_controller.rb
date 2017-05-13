@@ -28,10 +28,11 @@ class RecordsController < ApplicationController
   def update
     @record = Record.find(params[:id])
 
-    @record.update(record_params)
-
-    redirect_to records_path, notice: "更新成功！"
-
+    if @record.update(record_params)
+      redirect_to records_path, notice: "更新成功！"
+    else
+      render :edit
+    end
   end
 
   def destroy
