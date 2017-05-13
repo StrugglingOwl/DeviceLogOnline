@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2017-05-12
+  room_id: MyString
+  device_name: MyString
+  device_model: MyString
+  serial_number: MyString
+  summary: MyText
+  resolution: MyText
+  result: false
+  remarks: MyText
+
+two:
+  date: 2017-05-12
+  room_id: MyString
+  device_name: MyString
+  device_model: MyString
+  serial_number: MyString
+  summary: MyText
+  resolution: MyText
+  result: false
+  remarks: MyText
