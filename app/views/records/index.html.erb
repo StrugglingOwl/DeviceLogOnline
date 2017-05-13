@@ -1,6 +1,6 @@
 <div class="col-md-12">
   <div class="record">
-    <%= link_to("新建记录", new_record_path, class: "btn btn-primary pull-right") %>
+    <%= link_to("New Record", new_record_path, class: "btn btn-primary pull-right") %>
   </div>
   <table class="table table-hover">
     <thead>
@@ -11,7 +11,7 @@
         <td>设备名称</td>
         <td>型号</td>
         <td>序列号</td>
-        <td>故障简述</td>
+        <td>故障描述</td>
 
         <td>解决过程</td>
         <td>结果</td>
@@ -42,9 +42,11 @@
           <td><%= record.remarks %></td>
 
           <td>
-              <%= link_to("编辑", edit_record_path(record), class: "btn btn-sm btn-default")%>
-              <%= link_to("删除", record_path(record),    class: "btn btn-sm btn-default",
+            <% if current_user %>
+              <%= link_to("Edit", edit_record_path(record), class: "btn btn-sm btn-default")%>
+              <%= link_to("Destroy", record_path(record),    class: "btn btn-sm btn-default",
                           method: :delete, data: { confirm: "Are you sure?" } )%>
+            <% end %>
           </td>
         </tr>
       <% end %>
