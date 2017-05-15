@@ -30,7 +30,7 @@ class RecordsController < ApplicationController
     @record = Record.find(params[:id])
 
     if @record.update(record_params)
-      redirect_to records_path, notice: "更新成功！"
+      redirect_to record_path(@record), notice: "更新成功！"
     else
       render :edit
     end
