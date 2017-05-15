@@ -19,30 +19,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @records.each do |record| %>
-        <tr>
-          <td>#</td>
-          <td><%= record.date %></td>
-          <td><%= record.room_id %></td>
-          <td><%= link_to(record.device_name, record_path(record), title:"点击查看详情") %></td>
-          <td><%= record.device_model %></td>
-          <td><%= record.serial_number %></td>
-          <td><%= render_record_summary(record) %></td>
-
-          <td><%= render_record_resolution(record) %></td>
-          <td>
-            <%= if record.result == true
-              "已";
-            else
-              "待";
-            end
-            %>
-            解决
-          </td>
-          <td><%= record.remarks %></td>
-
-        </tr>
-      <% end %>
+      <%= render :partial => "record_item", :collection => @records, :as => :record %>
     </tbody>
   </table>
 </div>
