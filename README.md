@@ -8,7 +8,7 @@
 
 * Ruby version: 2.3
 
-* Rails version： 5.0
+* Rails version: 5.0
 
 * System dependencies: linux
 
