@@ -27,9 +27,9 @@
           <td><%= link_to(record.device_name, record_path(record), title:"点击查看详情") %></td>
           <td><%= record.device_model %></td>
           <td><%= record.serial_number %></td>
-          <td><%= simple_format(record.summary) %></td>
+          <td><%= render_record_summary(record) %></td>
 
-          <td><%= simple_format(record.resolution) %></td>
+          <td><%= render_record_resolution(record) %></td>
           <td>
             <%= if record.result == true
               "已";
